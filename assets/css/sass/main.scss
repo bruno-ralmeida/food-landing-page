@@ -24,13 +24,12 @@ body {
     background: $bg-default;
     display: grid;
     font-family: $font-default;
-    grid-template-rows: auto 2fr 1fr 1fr 1fr;
+    grid-template-rows: 100vh 90vh 90vh 90vh 90vh;
     grid-template-areas:
         "menu-home"
         "salad-menu"
         "about"
         "contact"
         "footer";
-    padding: toRem(20px) toRem(30px);
     align-items: stretch;
 }

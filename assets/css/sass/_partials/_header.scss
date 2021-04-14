@@ -1,77 +1,82 @@
 .menu {
-    align-items: stretch;
-    column-gap: toRem(10px);
-    display: grid;
-    grid-area: menu-home;
-    grid-template-areas: "menu-intro salad-pic";
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 2fr;
-    justify-items: center;
-    padding: toRem(20px) toRem(30px);
+	align-items: stretch;
+	column-gap: toRem(10px);
+	display: grid;
+	grid-area: menu-home;
+	grid-template-areas: "menu-intro salad-pic";
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 100%;
+	justify-items: center;
+	padding: toRem(50px) toRem(60px);
 
-    &__intro {
-        @include flx(column);
-        grid-area: menu-intro;
-        justify-content: flex-start;
-        padding: toRem(10px) toRem(20px);
+	&__intro {
+		@include flx(column);
+		grid-area: menu-intro;
+		justify-content: flex-start;
+		padding: toRem(10px) toRem(20px);
 
-        h3 {
-            @include font-base($font-default, toRem(32px), $font-weight-mid);
-        }
-        p {
-            @include font-base($font-default, toRem(20px), $font-weight-min, $c-gray);
-            margin: toRem(10px) 0 toRem(150px) 0;
-        }
+		h3 {
+			@include font-base($font-default, toRem(32px), $font-weight-mid);
+		}
 
-        & .menu {
-            &__title {
-                @include font-base($font-default, toRem(60px), $font-weight-max);
-                margin: 0.5em 0;
-                text-align: start;
-            }
+		p {
+			@include font-base($font-default, toRem(20px), $font-weight-min, $c-gray);
+			margin: toRem(10px) 0 toRem(150px) 0;
+		}
 
-            &__subtitle {
-                @include font-base($font-default, toRem(32px), $font-weight-min, $c-gray);
-                line-height: 30px;
-                margin: 0.5em 0;
-                text-align: start;
-            }
+		& .menu {
+			&__title {
+				@include font-base($font-default, toRem(60px), $font-weight-max);
+				margin: 0.5em 0;
+				text-align: start;
+				text-shadow: toRem(5px) toRem(10px) toRem(15px) $c-gray;
+			}
 
-            &__button {
-                @include font-base($font-default, toRem(18px), $font-weight-mid, $c-white);
-                align-self: flex-start;
-                background: $c-black;
-                border-radius: 100px 100px 5px 100px;
-                box-shadow: 2px 50px 30px -10px gray;
-                border: none;
-                cursor: pointer;
-                height: 60px;
-                margin: 0.5em 0;
-                position: relative;
-                text-align: center;
-                width: 220px;
+			&__subtitle {
+				@include font-base($font-default, toRem(32px), $font-weight-min, $c-gray);
+				line-height: 30px;
+				margin: 0.5em 0;
+				text-align: start;
+			}
 
-                & span {
-                    left: 25px;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
+			&__button {
+				@include font-base($font-default, toRem(18px), $font-weight-mid, $c-white);
+				align-self: flex-start;
+				background: $c-black;
+				border-radius: toRem(100px) toRem(100px) toRem(5px) toRem(100px);
+				box-shadow: toRem(2px) toRem(50px) toRem(30px) toRem(-10px) $c-gray;
+				border: none;
+				cursor: pointer;
+				height: toRem(60px);
+				margin: toRem(5px) 0;
+				position: relative;
+				text-align: center;
+				width: toRem(220px);
 
-                & img#arrow-rght {
-                    position: absolute;
-                    right: 15px;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
-                    vertical-align: middle;
-                }
-            }
-        }
-    }
+				& span {
+					left: toRem(25px);
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
 
-    &__image {
-        grid-area: salad-pic;
-        width: auto;
-        max-height: 90vh;
-    }
+				& img#arrow-rght {
+					position: absolute;
+					right: toRem(15px);
+					top: 50%;
+					transform: translate(-50%, -50%);
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+
+	&__image {
+		grid-area: salad-pic;
+
+		& img {
+			width: auto;
+			height: 100%;
+		}
+	}
 }
