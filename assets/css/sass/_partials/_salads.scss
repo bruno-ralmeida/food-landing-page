@@ -1,0 +1,92 @@
+.salad {
+    grid-area: salad-menu;
+    padding: toRem(50px) 0;
+    display: grid;
+    grid-template-areas: "options intro";
+    grid-template-columns: 3fr 2fr;
+    align-items: stretch;
+
+    &__menu {
+        grid-area: options;
+        align-items: center;
+        @include flx();
+        justify-content: center;
+
+        & .menu {
+            &__item {
+                list-style: none;
+                margin: toRem(20px);
+                justify-self: center;
+
+                &__card {
+                    background: $bg-card;
+                    border-bottom-left-radius: 400px;
+                    border-bottom-right-radius: 400px;
+                    border-top-left-radius: 600px;
+                    border-top-right-radius: 600px;
+                    display: grid;
+                    margin: 0 toRem(50px);
+                    grid-template-areas: "card-header" "card-main";
+                    grid-template-rows: 2fr 1fr;
+                    width: 250px;
+                    height: 350px;
+
+                    & .card {
+                        &__header {
+                            grid-area: card-header;
+                            position: relative;
+                            width: auto;
+                        }
+
+                        &__image {
+                            border-radius: 50%;
+                            box-shadow: 0 10px 25px gray;
+                            margin-bottom: 1.5em;
+                            position: absolute;
+                            top: -50px;
+                            width: 250px;
+                        }
+
+                        &__main {
+                            grid-area: card-main;
+                            margin: 1em 0;
+                            position: relative;
+                            text-align: center;
+
+                            & span {
+                                background: black;
+                                border-radius: 50%;
+                                bottom: -30px;
+                                color: aliceblue;
+                                cursor: pointer;
+                                display: inline-block;
+                                font-weight: bolder;
+                                height: 25px;
+                                line-height: normal;
+                                position: absolute;
+                                transform: translateX(-50%);
+                                vertical-align: middle;
+                                width: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__intro {
+        grid-area: intro;
+        align-self: center;
+
+        h2 {
+            @include font-base($font-default, $font-size-title, $font-weight-max);
+            letter-spacing: toRem(2px);
+        }
+        p {
+            @include font-base($font-default, $font-size-min, $font-weight-mid, $c-gray);
+            letter-spacing: toRem(1.5px);
+            line-height: toRem(20px);
+        }
+    }
+}
