@@ -1,4 +1,61 @@
 .contact {
-    grid-area: contact;
-    padding: toRem(50px) toRem(60px);
+  grid-area: contact;
+  padding: toRem(10px) toRem(120px);
+
+  &__reserve {
+    @include flx(column);
+    justify-content: space-around;
+
+    h4 {
+      @include font-base($font-default, toRem($font-size-subtitle - 25px), $font-weight-mid, $c-gray);
+    }
+    h3 {
+      @include font-base($font-default, toRem($font-size-subtitle), $font-weight-mid);
+    }
+
+    p {
+      @include font-base($font-default, toRem($font-size-text), $font-weight-min);
+      margin-top: toRem(20px);
+      width: 60%;
+    }
+    hr {
+      margin: toRem(30px) 0;
+    }
+
+    & .reserve {
+      &__button {
+        @include font-base($font-default, toRem($font-size-btn), $font-weight-mid, $c-white);
+        align-self: flex-start;
+        background: $c-black;
+        border-radius: toRem(5px) toRem(100px) toRem(100px) toRem(100px);
+        box-shadow: toRem(2px) toRem(50px) toRem(30px) toRem(-10px) rgba($c-gray, 0.5);
+        border: none;
+        cursor: pointer;
+        height: toRem(50px);
+        margin: toRem(15px) 0;
+        position: relative;
+        text-align: center;
+        width: toRem(220px);
+        align-self: flex-end;
+      }
+    }
+  }
+
+  &__list {
+    @include flx();
+    margin: toRem(60px) 0;
+    justify-content: space-between;
+
+    & .list {
+      &__info {
+        h4 {
+          @include font-base($font-default, toRem($font-size-subtitle - 15px), $font-weight-mid);
+          margin: toRem(20px) 0;
+        }
+        li {
+          @include font-base($font-default, toRem($font-size-text - 5px), $font-weight-min);
+        }
+      }
+    }
+  }
 }

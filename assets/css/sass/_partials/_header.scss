@@ -1,6 +1,6 @@
 .menu {
   align-items: stretch;
-  column-gap: toRem(10px);
+  column-gap: toRem(20px);
   display: grid;
   grid-area: menu-home;
   grid-template-areas: "menu-intro salad-pic";

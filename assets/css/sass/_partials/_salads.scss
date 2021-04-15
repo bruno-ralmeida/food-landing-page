@@ -5,6 +5,7 @@
   grid-template-areas: "options intro";
   grid-template-columns: 3fr 2.5fr;
   grid-template-rows: auto;
+  padding: toRem(50px) toRem(60px);
 
   &__menu {
     @include flx();

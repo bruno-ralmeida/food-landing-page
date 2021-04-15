@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .menu {
   align-items: stretch;
-  column-gap: 0.625rem;
+  column-gap: 1.25rem;
   display: grid;
   grid-area: menu-home;
   grid-template-areas: "menu-intro salad-pic";
@@ -95,6 +95,7 @@
   grid-template-areas: "options intro";
   grid-template-columns: 3fr 2.5fr;
   grid-template-rows: auto;
+  padding: 3.125rem 3.75rem;
 }
 .salad__menu {
   display: flex;
@@ -217,18 +218,18 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   grid-area: fresh-salad;
 }
 .about__chef-skills {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   grid-area: chef-skills;
 }
 .about__info {
-  padding: 30px 40px;
+  padding: 6.25rem;
   position: relative;
 }
 .about__info h3 {
@@ -249,12 +250,11 @@
   line-height: 1.875rem;
 }
 .about__image {
-  height: 450px;
-  padding: 1.25rem 0.625rem;
+  height: 550px;
+  padding: 1.25rem 1.875rem;
 }
 .about__image img {
   height: 100%;
-  max-width: 450px;
   width: auto;
 }
 .about__app {
@@ -266,13 +266,15 @@
 }
 .about__app .app__demo {
   padding: 6.25rem 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-self: center;
 }
 .about__app .app__demo img {
   width: auto;
   height: 550px;
+}
+.about__app .app__info {
+  align-self: center;
+  padding: 0 3.75rem;
 }
 .about__app .app__info h3 {
   font-family: "Poppins", sans-serif;
@@ -289,16 +291,84 @@
   font-weight: 300;
   color: #727272;
   text-shadow: 0.3125rem 0.625rem 0.9375rem rgba(114, 114, 114, 0.275);
+  margin: 1.25rem 0;
   line-height: 1.875rem;
 }
-.about__app .app__info img {
-  margin-top: 1.875rem;
-  margin-left: 0.625rem;
+.about__app .app__download {
+  display: flex;
+  max-width: 250px;
+  cursor: pointer;
+  align-self: center;
 }
 
 .contact {
   grid-area: contact;
-  padding: 3.125rem 3.75rem;
+  padding: 0.625rem 7.5rem;
+}
+.contact__reserve {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.contact__reserve h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: #727272;
+}
+.contact__reserve h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.625rem;
+  font-weight: 500;
+  color: #1b1b1b;
+}
+.contact__reserve p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #1b1b1b;
+  margin-top: 1.25rem;
+  width: 60%;
+}
+.contact__reserve hr {
+  margin: 1.875rem 0;
+}
+.contact__reserve .reserve__button {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #f8f8f2;
+  align-self: flex-start;
+  background: #1b1b1b;
+  border-radius: 0.3125rem 6.25rem 6.25rem 6.25rem;
+  box-shadow: 0.125rem 3.125rem 1.875rem -0.625rem rgba(114, 114, 114, 0.5);
+  border: none;
+  cursor: pointer;
+  height: 3.125rem;
+  margin: 0.9375rem 0;
+  position: relative;
+  text-align: center;
+  width: 13.75rem;
+  align-self: flex-end;
+}
+.contact__list {
+  display: flex;
+  flex-direction: row;
+  margin: 3.75rem 0;
+  justify-content: space-between;
+}
+.contact__list .list__info h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6875rem;
+  font-weight: 500;
+  color: #1b1b1b;
+  margin: 1.25rem 0;
+}
+.contact__list .list__info li {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 300;
+  color: #1b1b1b;
 }
 
 * {
@@ -311,7 +381,7 @@ body {
   background: #f5f5f5;
   display: grid;
   font-family: "Poppins", sans-serif;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto 60vh auto auto;
   grid-template-areas: "menu-home" "salad-menu" "about" "contact";
   align-items: stretch;
 }

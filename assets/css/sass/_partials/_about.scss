@@ -12,19 +12,19 @@
   &__fresh-salad {
     @include flx();
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     grid-area: fresh-salad;
   }
 
   &__chef-skills {
     @include flx();
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     grid-area: chef-skills;
   }
 
   &__info {
-    padding: 30px 40px;
+    padding: toRem(100px);
     position: relative;
 
     h3 {
@@ -42,12 +42,11 @@
   }
 
   &__image {
-    height: 450px;
-    padding: toRem(20px) toRem(10px);
+    height: 550px;
+    padding: toRem(20px) toRem(30px);
 
     & img {
       height: 100%;
-      max-width: 450px;
       width: auto;
     }
   }
@@ -62,8 +61,7 @@
     & .app {
       &__demo {
         padding: toRem(100px) 0;
-        @include flx();
-        justify-content: space-evenly;
+        justify-self: center;
 
         & img {
           width: auto;
@@ -72,6 +70,9 @@
       }
 
       &__info {
+        align-self: center;
+        padding: 0 toRem(60px);
+
         h3 {
           @include font-base($font-default, toRem($font-size-subtitle), $font-weight-max);
           @include txt-shadow();
@@ -82,13 +83,16 @@
         p {
           @include font-base($font-default, toRem($font-size-text), $font-weight-min, $c-gray);
           @include txt-shadow();
+          margin: toRem(20px) 0;
           line-height: toRem(30px);
         }
-        
-        & img {
-          margin-top: toRem(30px);
-          margin-left: toRem(10px);
-        }
+      }
+
+      &__download {
+        display: flex;
+        max-width: 250px;
+        cursor: pointer;
+        align-self: center;
       }
     }
   }
