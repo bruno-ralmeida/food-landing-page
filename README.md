@@ -5,3 +5,5 @@
 Projeto desenvolvido para estudo em Sass 🌠
 
 > Home 🛸
+
+![Home](https://github.com/bruno-ralmeida/food-landing-page/blob/main/project-images/project.png)
