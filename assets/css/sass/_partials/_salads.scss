@@ -1,22 +1,21 @@
 .salad {
-  grid-area: salad-menu;
-  display: grid;
-  grid-template-areas: "options intro";
-  grid-template-rows: 80vh;
-  grid-template-columns: 3fr 2.5fr;
   align-items: stretch;
+  display: grid;
+  grid-area: salad-menu;
+  grid-template-areas: "options intro";
+  grid-template-columns: 3fr 2.5fr;
+  grid-template-rows: auto;
 
   &__menu {
-    grid-area: options;
-    align-items: center;
     @include flx();
+    align-items: center;
+    grid-area: options;
     justify-content: center;
 
     & .menu {
       &__item {
-        list-style: none;
-        margin: toRem(20px);
         justify-self: center;
+        list-style: none;
 
         &__card {
           background: $bg-card;
@@ -24,13 +23,13 @@
           border-bottom-right-radius: 550px;
           border-top-left-radius: 600px;
           border-top-right-radius: 600px;
+          box-shadow: toRem(0px) toRem(5px) toRem(25px) toRem(2px) rgba($c-gray, 0.5);
           display: grid;
           grid-template-areas: "card-header" "card-main";
           grid-template-rows: 2.5fr 2fr;
           height: 320px;
           margin: 0 toRem(50px);
           width: 220px;
-          box-shadow: toRem(0px) toRem(5px) toRem(25px) toRem(2px) $c-gray;
 
           & .card {
             &__header {
@@ -40,46 +39,48 @@
 
             &__image {
               border-radius: 50%;
-              box-shadow: 0 10px 25px gray;
+              box-shadow: 0 10px 25px $c-gray;
+              left: -20px;
               margin-bottom: 1.5em;
               position: absolute;
               top: -80px;
-              left: -20px;
               width: 250px;
+              z-index: 10;
             }
 
             &__main {
+              $font-card: 16px;
+              align-self: stretch;
               grid-area: card-main;
               position: relative;
               text-align: center;
-              align-self: stretch;
 
               h3 {
-                @include font-base($font-default, toRem(18px), $font-weight-max);
+                @include font-base($font-default, toRem($font-card + 2px), $font-weight-max);
                 margin: toRem(25px) 0;
               }
 
               p {
-                @include font-base($font-default, toRem(16px), $font-weight-mid, $c-gray);
+                @include font-base($font-default, toRem($font-card), $font-weight-mid, $c-gray);
                 margin: toRem(15px) 0;
               }
 
               h4 {
-                @include font-base($font-default, toRem(16px), $font-weight-mid);
+                @include font-base($font-default, toRem($font-card), $font-weight-mid);
                 margin: toRem(15px) 0;
               }
 
               & span {
-                @include font-base($font-default, toRem(16px), $font-weight-mid, $c-white);
+                @include font-base($font-default, toRem($font-card), $font-weight-mid, $c-white);
                 background: $c-black;
                 border-radius: 50%;
                 bottom: toRem(-10px);
+                box-shadow: toRem(0px) toRem(10px) toRem(10px) toRem(2px) rgba($c-gray, 0.2);
                 cursor: pointer;
                 display: inline-block;
                 height: 25px;
                 line-height: normal;
                 position: absolute;
-                box-shadow: toRem(0px) toRem(1px) toRem(10px) toRem(2px) $c-gray;
                 transform: translateX(-50%);
                 vertical-align: middle;
                 width: 25px;
@@ -92,22 +93,23 @@
   }
 
   &__intro {
-    grid-area: intro;
     align-self: center;
+    grid-area: intro;
     padding: toRem(30px) toRem(60px);
 
     h2 {
-      @include font-base($font-default, $font-size-title, $font-weight-max);
+      @include font-base($font-default, toRem($font-size-subtitle), $font-weight-max);
+      @include txt-shadow();
       letter-spacing: toRem(2px);
-      margin: toRem(15px) 0;
-      text-shadow: toRem(2px) toRem(5px) toRem(15px) $c-gray;
-      width: 70%;
+      margin: toRem(10px) 0;
+      max-width: 80%;
     }
 
     p {
-      @include font-base($font-default, $font-size-min, $font-weight-mid, $c-gray);
-      letter-spacing: toRem(1.5px);
-      line-height: toRem(20px);
+      @include font-base($font-default, toRem($font-size-text), $font-weight-min, $c-gray);
+      @include txt-shadow();
+      letter-spacing: toRem(1.25px);
+      margin-top: toRem(25px);
     }
   }
 }

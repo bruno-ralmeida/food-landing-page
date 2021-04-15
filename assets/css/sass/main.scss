@@ -1,6 +1,6 @@
 @import "./utils/utils", "./mixins/mixins";
 
-@import "./_partials/header", "./_partials/salads", "./_partials/about", "./_partials/contact", "./_partials/footer";
+@import "./_partials/header", "./_partials/salads", "./_partials/about", "./_partials/contact";
 
 $bg-default: #f5f5f5;
 $font-default: "Poppins", sans-serif;
@@ -15,21 +15,20 @@ $c-white: #f8f8f2;
 $c-gray: #a8a8a5;
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: $bg-default;
-    display: grid;
-    font-family: $font-default;
-    grid-template-rows: 100vh 90vh 90vh 90vh 90vh;
-    grid-template-areas:
-        "menu-home"
-        "salad-menu"
-        "about"
-        "contact"
-        "footer";
-    align-items: stretch;
+  background: $bg-default;
+  display: grid;
+  font-family: $font-default;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "menu-home"
+    "salad-menu"
+    "about"
+    "contact";
+  align-items: stretch;
 }
